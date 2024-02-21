@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>html_003_css</title>
+		<link rel="stylesheet" href="./style/outer.css" type="text/css" />
+		<!--type이하 html5 이후 생략가능-->
+		<style type="text/css">
+			#two {
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">internal style</div>
+		<div id="two">external style</div>
+		<!--id는 유니크 값 오직하나-->
+		<div id="three" style="color: aqua">inline style</div>
+	</body>
+</html>

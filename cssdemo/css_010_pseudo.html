@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css_010_pseudo.html</title>
+    <style>
+      /* nth-child(n)와 nth-of-type(n) */
+
+      p:nth-child(even) {
+        background-color: rgb(231, 69, 110);
+      }
+
+      p:nth-child(2n) {
+        background-color: rgb(162, 201, 22);
+      }
+
+      p:nth-child(odd) {
+        background-color: rgb(219, 113, 118);
+      }
+
+      p:nth-child(2n-1) {
+        background-color: rgb(235, 219, 219);
+      }
+
+      /* p:nth-of-type(even) {
+        background-color: rgb(184, 112, 30);
+      } */
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>computer</p>
+      <span>test</span>
+      <p>moniter</p>
+      <p>televison</p>
+      <p>desk</p>
+      <p>top</p>
+    </div>
+  </body>
+</html>

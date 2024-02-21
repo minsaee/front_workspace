@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*
+      선택자(selector) 우선순위
+      */
+
+      /* 0001 */
+      p {
+        color: rgb(158, 150, 206);
+        font-size: 30px;
+      }
+
+      /* 0010 */
+      .order {
+        color: rgb(151, 109, 206);
+      }
+
+      /* 0100 */
+      #unit {
+        color: rgb(121, 16, 16);
+      }
+    </style>
+  </head>
+  <body>
+    <p>test1</p>
+    <!-- 1000 -->
+    <p id="unit" class="order" style="color: cornflowerblue">test2</p>
+    <p>test3</p>
+    <p class="order">test4</p>
+  </body>
+</html>

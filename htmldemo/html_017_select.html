@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>html_017_select.html</title>
+	</head>
+	<body>
+		<form action="">
+			<select name="subject" id="subject">
+				<option value="java">JAVA</option>
+				<!--value는 약어나 영문으로 입력-->
+				<option value="jsp" selected="selected">JSP</option>
+				<option value="html5">HTML5</option>
+				<option value="jquery">JQUERY</option>
+			</select>
+			<input type="submit" value="commit" />
+		</form>
+
+		<form action="">
+			<select name="subgroup" id="">
+				<optgroup label="backend">
+					<option value="java">JAVA</option>
+					<option value="jsp">JSP</option>
+					<option value="spring">SPRING</option>
+				</optgroup>
+				<optgroup label="frontend">
+					<option value="html5">HTML5</option>
+					<option value="css">CSS</option>
+					<option value="js">JAVASCRIPT</option>
+				</optgroup>
+				<optgroup label="database">
+					<option value="oracle" selected="selected">ORACLE</option>
+					<option value="mysql">MYSQL</option>
+					<option value="mssql">MSSQL</option>
+				</optgroup>
+			</select>
+			<input type="submit" value="commit" />
+		</form>
+	</body>
+</html>
