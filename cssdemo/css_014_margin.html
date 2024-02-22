@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css_014_margin.html</title>
+    <style>
+      /*
+      브라우저별 요소의 기본값을 제공한다.(브라우저별로 다르다.)
+      */
+      * {
+        border: 0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .wrap {
+        width: 160px;
+        height: 260px;
+        background-color: rgb(95, 179, 130);
+      }
+
+      /* margin은 하나만 적용 된다.*/
+      .aa {
+        width: 100px;
+        height: 100px;
+        background-color: crimson;
+        border-top: 10px solid skyblue;
+        border-bottom: 10px solid slateblue;
+        margin-bottom: 10px;
+      }
+
+      .bb {
+        width: 100px;
+        height: 100px;
+        background-color: crimson;
+        border-top: 10px solid skyblue;
+        border-bottom: 10px solid slateblue;
+        margin-top: 10px;
+      }
+
+      span.sp1 {
+        background-color: darksalmon;
+        margin-right: 10px;
+      }
+
+      span.sp2 {
+        background-color: rgb(146, 29, 94);
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 50px;
+      }
+
+      div.line {
+        border: 1px solid plum;
+      }
+
+      div#m1 {
+        width: 100px;
+        height: 99px;
+        background-color: rgb(230, 195, 44);
+        padding-top: 1px;
+      }
+
+      div#m2 {
+        width: 80px;
+        height: 80px;
+        background-color: rgb(100, 107, 103);
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="aa">one</div>
+      <div class="bb">two</div>
+    </div>
+
+    <div class="inline">
+      <span class="sp1">span1</span><span class="sp2">span2</span>
+    </div>
+
+    <div class="line">line</div>
+
+    <div id="m1">
+      <div id="m2">box</div>
+    </div>
+  </body>
+</html>
