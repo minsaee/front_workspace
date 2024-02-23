@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js007_var_let.html</title>
+  </head>
+  <body>
+    <script>
+      // 변수선언 전 : Uncaught ReferenceError: foo is not defined at
+      // 변수선언 후 : foo:undefined
+      console.log(`foo:${foo}`);
+      var foo;
+
+      // 변수선언 전 : Uncaught ReferenceError: foo is not defined at
+      // 변수선언 후 : ncaught ReferenceError: Cannot access 'bar' before initialization at;
+      console.log(`bar:${bar}`);
+      let bar;
+    </script>
+  </body>
+</html>

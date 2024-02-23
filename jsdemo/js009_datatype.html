@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js009_datatype.html</title>
+  </head>
+  <body>
+    <script>
+      // data type : primitive datatype(기본 데이터타입), reference datatype(참조 데이터타입)
+
+      // 정수(int) 실수(float)를 구분하지 않는다.
+
+      // 기본데이터타입은 initial letter가 소문자
+      let num = 3;
+      console.log(typeof num);
+      console.log(num + 2); // 산술연산자
+
+      num = "3";
+      console.log(typeof num);
+      console.log(num + 2); // 문자열 연결
+
+      let avg = 4.5;
+      console.log(`avg:${avg}, ${typeof avg}`);
+
+      let check = true;
+      console.log(`check=${check}, ${typeof check}`); //true, boolean
+
+      let data = "javascript";
+      console.log(`data=${data}, ${typeof data}`); //data=javascript, string
+
+      let na = undefined;
+      console.log(`na=${na}, ${typeof na}`); //na=undefined, undefined
+
+      let name = null;
+      console.log(`name=${name}, ${typeof name}`); //name=null, object
+
+      let loc = new String("node");
+      console.log(`loc=${loc}, ${typeof loc}`);
+      console.log(`loc=${loc instanceof String}`);
+
+      // 변수의 값으로 사용되는 함수는 익명함수로 정의한다.
+      let fn = function () {
+        console.log("function");
+      };
+
+      console.log(`fn=${fn}, ${typeof fn}`);
+
+      // 참조데이터타입은 initial letter가 대문자
+      let arr = [1, 2, 3];
+      console.log(`arr=${arr}, ${typeof arr}`);
+      console.log(`arr=${arr instanceof Array}`);
+
+      let customer = { name: "임성빈", age: 99 };
+      // customer=[object Object], object
+      console.log(`customer=${customer}, ${typeof customer}`);
+      console.log(`arr=${customer instanceof Object}`);
+      console.log(`${customer.name}, ${customer.age}`);
+    </script>
+  </body>
+</html>
