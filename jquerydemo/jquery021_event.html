@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery021_event</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("input").on("focus mouseover", function () {
+          $("div").css({ "background-color": "green" });
+        }); // on 하나의 요소에 여러가지 event를 등록시킬 때 사용
+
+        $("input").on("blur mouseout", function () {
+          $("div").css({ "background-color": "white" });
+        });
+
+        $("#fid").keyup(function () {
+          $("p").text($(this).val());
+        });
+
+        $("#fname").keydown(function () {
+          $("p").text($(this).val());
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div><input type="text" name="id" id="fid" /></div>
+
+    <button>keyboard</button>
+    <input type="text" name="id" id="fname" />
+    <p></p>
+  </body>
+</html>

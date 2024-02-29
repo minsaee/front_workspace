@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js050_main_popup</title>
+    <style>
+      #popup {
+        width: 301px;
+        height: 351px;
+        border: 1px solid black;
+        position: fixed;
+        left: 30%;
+        top: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <p>
+        (엑스포츠뉴스 나승우 기자) 사우디아라비아의 줄기찬 관심에도 손흥민은
+        오직 토트넘 홋스퍼만 생각하고 있다. 토트넘도 손흥민과 재게약을 준비 중인
+        것으로 전해졌다. 영국 풋볼인사이더는 27일(한국시간) "토트넘과 손흥민은
+        이미 대화를 시작했으며 곧 공식 협상에 돌입할 것"이라고 독점보도했다.
+        매체는 "토트넘은 위태로운 계약 상황에도 캡틴 손흥민에 대한 어떤 제안도
+        받아들이지 않을 것"이라며 "손흥민은 여름 이적시장을 앞두고 사우디
+        프로리그 클럽들과 연결되고 있다. 2021년 7월 마지막 재계약을 체결한 뒤
+        2025년 6월 계약 종료된다"라고 전했다.
+      </p>
+
+      <div id="popup">
+        <img src="images/popup.jpg" usemap="#pop" />
+      </div>
+      <map name="pop" id="pop">
+        <area shape="rect" coords="255,332,290,345" href="#" alt="창닫기" />
+      </map>
+    </div>
+    <script>
+      let close = document.querySelector("map#pop area");
+      close.onclick = () => {
+        let popup = document.querySelector("div#popup");
+        popup.style.display = "none";
+      };
+    </script>
+  </body>
+</html>

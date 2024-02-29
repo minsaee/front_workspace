@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery005_event</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 객체.on('이벤트', 콜백함수);
+        // $("button").on("click", function () {
+        //   alert("event call");
+        // });
+
+        // 객체.이벤트(콜백함수);
+        $("button").click(function () {
+          alert("event call");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn">commit</button>
+  </body>
+</html>
