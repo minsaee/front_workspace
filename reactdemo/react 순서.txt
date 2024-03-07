@@ -1,0 +1,20 @@
+1. react 설치
+npm install -g create-react-app
+npx create-react-app
+
+2. 프로젝트 생성
+create-react-app <name>
+
+3. 프로젝트 실행
+cd <name>
+npm start
+
+4. 프로젝트 중지
+Ctrl + c y
+
+5. 프로젝트 삭제
+rmdir /s <name>
+
+6. react 삭제
+npm uninstall -g create-react-app
+

@@ -1,0 +1,107 @@
+[1] Spring프레임워크과 Spring Boot 프레임워크의 특징과 차이점
+1. Spring이란?
+   Spring은 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크로, 엔터프라이즈급 애플리케이션을 개발하는 데 필요한 포괄적인 기능을 제공합니다. 이러한 기능은 데이터베이스 연동, 웹 애플리케이션 개발, 메시징, 테스트 등 다양한 영역에 걸쳐 있습니다.
+2. Spring의 주요 특징
+ - IoC(Inversion of Control)**: 객체 관리를 Spring 컨테이너에 위임하여, 개발자는 비즈니스 로직에만 집중할 수 있습니다.
+ -  AOP(Aspect Oriented Programming)**: 공통 관심사를 분리하여 코드의 중복을 줄이고 유지 보수성을 향상시킵니다.
+ - 다양한 데이터 접근 기술 지원**: JDBC, JPA, Hibernate, MyBatis 등 다양한 데이터 접근 기술을 지원합니다.
+ - POJO(Plain Old Java Object) 기반**: 특정 기술과 강한 의존성 없이 필요한 부분만을 선택하여 사용할 수 있습니다.
+
+3. Spring Boot란?
+  Spring Boot는 Spring 기반 애플리케이션을 빠르게, 쉽게 개발할 수 있도록 도와주는 도구입니다. 'Convention over Configuration' 원칙을 따르며, 개발자가 일일이 설정하지 않아도 자동 설정을 제공하여 개발 편의성을 높입니다.
+
+4. Spring Boot의 주요 특징
+ - 자동 설정(Auto Configuration)**: Spring Boot는 애플리케이션에서 필요로 하는 빈을 자동으로 설정해줍니다.
+ - 내장 서버 지원**: Tomcat, Jetty, Undertow 등의 서버를 내장하고 있어 별도의 WAS를 설치하지 않고 웹 애플리케이션을 실행할 수 있습니다.
+ - 독립적으로 실행 가능한 JAR 배포**: Spring Boot 애플리케이션은 내장 서버와 함께 독립적으로 실행 가능한 JAR 파일로 패키징되어 배포가 용이합니다.
+ - Spring Ecosystem Integration**: Spring 프레임워크뿐만 아니라 Spring Data, Spring Security 등 Spring 생태계와 잘 통합되어 있습니다.
+
+5. Spring과 Spring Boot의 차이점
+ - 설정의 차이: Spring은 세밀한 설정을 통해 유연한 개발이 가능하지만, 이로 인해 설정이 복잡해질 수 있습니다. 반면, Spring Boot는 자동 설정을 제공하여 복잡한 설정 없이도 쉽게 애플리케이션을 개발할 수 있습니다.
+ - 의존성 관리: Spring Boot는 'Starter'를 통해 관련된 의존성을 한 번에 관리할 수 있습니다. 이를 통해 버전 충돌 없이 의존성을 관리할 수 있습니다.
+ - 배포 방식: Spring Boot는 내장 서버를 통해 독립적으로 실행 가능한 JAR 파일로 애플리케이션을 배포할 수 있습니다. 즉, 별도의 WAS 설치 없이도 애플리케이션을 실행할 수 있습니다.
+
+정리하면, Spring은 유연한 설정과 다양한 기능을 통해 엔터프라이즈급 애플리케이션을 개발하는 데 적합하며, Spring Boot는 Spring 기반 애플리케이션의 개발과 배포를 간편하게 해주는 도구라고 볼 수 있겠네.
+
+[2]Spring 프레임워크의 어노테이션
+1. **Core Annotations**
+ @Autowired`: 의존성 주입을 위한 어노테이션입니다. 생성자, 필드, setter 등에 사용할 수 있습니다.
+ @Component`: 해당 클래스를 Spring이 관리하는 bean으로 등록합니다.
+ @Configuration`: 해당 클래스가 Bean 설정을 담당하는 클래스임을 명시합니다.
+ @Bean`: 개발자가 직접 컨트롤이 필요한 외부 라이브러리 등을 Bean으로 등록하고 싶을 때 사용합니다.
+ @Scope`: Bean의 생명 주기를 설정합니다. Singleton, Prototype 등 다양한 옵션을 설정할 수 있습니다.
+ @Service`: 비즈니스 로직을 처리하는 Service 클래스임을 명시합니다. `@Component`를 상속받아 만들어진 어노테이션입니다.
+ @Repository`: 데이터 저장소를 다루는 Repository 클래스임을 명시합니다. `@Component`를 상속받아 만들어진 어노테이션입니다.
+ @Controller`: MVC 패턴의 Controller 클래스임을 명시합니다. `@Component`를 상속받아 만들어진 어노테이션입니다.
+ @RestController`: `@Controller`와 `@ResponseBody`가 결합된 어노테이션으로, RESTful 웹서비스를 제공하는 컨트롤러임을 명시합니다.
+ @RequestMapping`: 요청 URL을 어떤 메소드가 처리할지 매핑합니다. 클래스와 메소드 레벨에서 사용할 수 있습니다.
+ @Qualifier`: 같은 타입의 Bean이 여러 개 있을 때, 어떤 Bean을 주입해야 할지 선택할 수 있게 해줍니다.
+ @Value`: 속성 파일의 값을 필드에 주입합니다.
+ @Required`: Setter 메소드에 사용되며, 해당 메소드가 반드시 Bean 설정 시에 호출되어야 함을 명시합니다.
+ @Lazy`: Bean을 Lazy Initialization 하도록 설정합니다. 즉, Bean이 실제로 사용될 때까지 초기화를 지연시킵니다.
+ @Primary`: 같은 타입의 Bean이 여러 개 있을 때, 우선적으로 주입될 Bean을 지정합니다.
+ @Profile`: Bean의 생성과 사용을 특정 프로파일에 제한합니다.
+ @ComponentScan`: Spring이 어떤 패키지를 스캔하여 Bean을 찾을지 지정합니다.
+ @Import`: 다른 설정 클래스를 가져와 사용합니다.
+ @ImportResource`: XML 설정 파일을 가져와 사용합니다.
+ @PropertySource`: 속성 파일의 위치를 지정합니다.
+ @DependsOn`: 특정 Bean이 다른 Bean에 의존성을 가지게 합니다.
+ @Async`: 메소드를 비동기로 실행하도록 합니다.
+ @EnableAsync`: `@Async` 어노테이션을 활성화합니다.
+ @EnableScheduling`: 스케줄링을 활성화합니다.
+ @Scheduled`: 메소드를 주기적으로 실행하도록 합니다.
+ @EnableCaching`: 캐싱을 활성화합니다.
+ @Cacheable`, `@CacheEvict`, `@CachePut`: 캐싱과 관련된 동작을 지정합니다.
+ @PostConstruct`, `@PreDestroy`: Bean의 생명주기에 따른 콜백 메소드를 지정합니다.
+ @Order`: Bean이나 메소드의 실행 순서를 지정합니다.
+ @EnableTransactionManagement`: 트랜잭션 관리를 활성화합니다. 
+
+2. **Spring MVC Annotations**
+ @Controller: 해당 클래스가 웹 요청을 처리하는 컨트롤러 클래스임을 명시합니다.
+ @RestController: @Controller`와 `@ResponseBody`를 결합한 것으로, RESTful 웹 서비스를 제공하는 컨트롤러임을 명시합니다.
+ @RequestMapping: 요청 URL을 어떤 메소드가 처리할지 매핑합니다. 클래스와 메소드 레벨에서 사용할 수 있습니다.
+ @GetMapping, @PostMapping, @PutMapping, @DeleteMapping, @PatchMapping: 각각 GET, POST, PUT, DELETE, PATCH HTTP 메소드에 대응하는 `@RequestMapping`의 축약형입니다.
+ @RequestParam: 요청 파라미터를 메소드의 매개변수에 바인딩합니다.
+ @PathVariable: URL 경로에 있는 값을 메소드의 매개변수에 바인딩합니다.
+ @RequestBody: HTTP 요청 본문을 자바 객체로 변환하여 메소드의 매개변수에 바인딩합니다.
+ @ResponseBody: 메소드가 반환하는 값을 HTTP 응답 본문에 작성합니다.
+ @ModelAttribute: 요청 파라미터를 바인딩하여 모델 객체를 생성하거나, 모델에 객체를 추가합니다.
+ @SessionAttributes: 모델에 저장된 특정 속성을 HTTP 세션에 저장합니다.
+ @CookieValue: 쿠키 값을 메소드의 매개변수에 바인딩합니다.
+ @RequestHeader: HTTP 요청 헤더를 메소드의 매개변수에 바인딩합니다.
+ @ResponseStatus: HTTP 상태 코드를 지정합니다.
+ @ExceptionHandler: 특정 예외를 처리하는 메소드임을 명시합니다.
+ @ControllerAdvice: 모든 컨트롤러에 적용되는 공통 코드를 정의합니다.
+ @InitBinder: 요청 파라미터를 바인딩하는 방법을 커스터마이징합니다.
+ @SessionAttribute: 세션에서 특정 이름의 속성을 메소드의 매개변수에 바인딩합니다.
+ @RequestAttribute: 요청에서 특정 이름의 속성을 메소드의 매개변수에 바인딩합니다.
+ @MatrixVariable: URL 경로에 포함된 행렬 변수를 메소드의 매개변수에 바인딩합니다.
+ @Value: 속성 파일의 값을 메소드의 매개변수에 바인딩합니다.
+ @CrossOrigin: CORS(Cross-Origin Resource Sharing)를 지원합니다.
+ @EnableWebMvc: Spring MVC를 설정합니다.
+ @ExceptionHandler: 예외 처리 메소드를 지정합니다.
+ @RequestMapping: URL 패턴을 클래스나 메소드에 매핑합니다.
+ @Valid`: 검증이 필요한 객체 앞에 사용하여 검증을 수행합니다.
+ @ModelAttribute: 메서드 레벨에서 사용하면 해당 메서드의 반환값을 모델에 추가하며, 메서드 인자 레벨에서 사용하면 클라이언트가 전송한 값을 해당 인자에 바인딩합니다.
+ @SessionAttribute: 특정 세션 속성에 접근할 수 있게 도와줍니다.
+ @RequestAttribute: 특정 요청 속성에 접근할 수 있게 도와줍니다.
+ @ResponseBody: 메서드가 반환하는 값을 응답 본문에 작성합니다.
+   
+3. **Spring Data JPA Annotations**
+   - @Entity: 해당 클래스가 JPA의 엔티티임을 명시합니다.
+   - @Id, @GeneratedValue: 엔티티의 기본키와 그 생성 전략을 명시합니다.
+   - @Column, @Table: 엔티티와 데이터베이스 테이블의 매핑 정보를 명시합니다.
+   - @OneToOne, @OneToMany, @ManyToOne, @ManyToMany: 엔티티 간의 관계를 명시합니다.
+
+4. **Spring Security Annotations**
+   - @EnableWebSecurity: Spring Security를 사용할 때, 웹 보안을 활성화합니다.
+   - @PreAuthorize, @PostAuthorize: 메소드 호출 전후의 보안 제약 조건을 명시합니다.
+ 
+5. Spring Boot만 제공하는 어노테이션
+   Spring Boot는 Spring의 사용성을 향상시키기 위해 몇 가지 고유한 어노테이션을 제공합니다.
+ @SpringBootApplication: 이 어노테이션은 @Configuration, @EnableAutoConfiguration 및 @ComponentScan을 결합한 형태로, Spring Boot 애플리케이션의 메인 클래스에 주로 사용합니다. 이 어노테이션 하나로 Spring의 자동 설정, Bean 읽기와 생성을 모두 자동으로 설정합니다.
+ @EnableAutoConfiguration: Spring Boot의 자동 설정을 활성화합니다. Spring의 다양한 설정들을 개발자 대신 자동으로 설정해줍니다.
+ @ConfigurationProperties: 이 어노테이션은 type-safe한 프로퍼티 바인딩을 가능하게 합니다. 프로퍼티 값들을 객체로 매핑하여 사용할 수 있게 해주는데, 이는 특히 여러 프로퍼티 값을 그룹화할 때 유용합니다.
+ @ConditionalOnExpression, @ConditionalOnMissingBean, @ConditionalOnClass 등의 조건부 어노테이션들: 이러한 어노테이션들은 특정 조건을 만족하는 경우에만 Bean을 등록하도록 합니다. 이를 통해 더욱 세밀한 Bean 등록 조건을 설정할 수 있습니다.
+ @SpringBootTest: 이 어노테이션은 Spring Boot 애플리케이션의 통합 테스트를 위해 사용됩니다. 이 어노테이션은 @RunWith(SpringRunner.class)와 함께 사용되며, Spring Boot의 모든 테스트 기능을 활성화합니다.
+ @DataJpaTest, @WebMvcTest, @RestClientTest 등의 슬라이스 테스트 어노테이션들: 이러한 어노테이션들은 특정 레이어의 테스트에 필요한 부분만을 로드하여 빠르고 효율적인 단위 테스트를 가능하게 합니다.
